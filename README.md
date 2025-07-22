@@ -132,4 +132,72 @@ Ensure your root `package.json` includes the new packages in its dependencies. R
     "dev": "turbo run dev",
     "lint": "turbo run lint",
     "format": "prettier --write \"**/*.{ts,tsx,md}\"",
-    "check-types
+    "check-types": "turbo run check-types"
+  },
+  "devDependencies": {
+    "prettier": "^3.6.2",
+    "turbo": "^2.5.5",
+    "typescript": "5.8.3"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "packageManager": "npm@10.7.0",
+  "workspaces": [
+    "apps/*",
+    "packages/*"
+  ],
+  "dependencies": {
+    "@repo/tailwind-config": "^0.0.0",
+    "@repo/ui": "^0.0.0"
+  }
+}
+```
+
+---
+
+### 4. Configure UI Package and Install
+
+Prepare the shared `ui` package and install dependencies.
+
+1.  Create an empty `styles.css` file in `packages/ui/src/`. This file will be populated by the build process.
+
+    <img width="284" height="229" alt="UI package structure with new styles.css file" src="https://github.com/user-attachments/assets/1ffad552-01de-47b2-a899-8bc6decc8af4" />
+
+2.  Run the install command from the root directory to link all workspace packages.
+
+    ```bash
+    npm install
+    ```
+
+---
+
+### 5. Configure Web Application
+
+Finally, configure your web application (e.g., in `apps/web`) to import and use the shared Tailwind configuration.
+
+1.  **Update `globals.css`**
+
+    In `apps/web/app/globals.css`, import the shared styles from your packages.
+
+    ```css
+    @import 'tailwindcss';
+    @import '@repo/tailwind-config';
+    @import '@repo/ui/styles.css';
+    ```
+
+2.  **Add `postcss.config.js`**
+
+    Create a `postcss.config.js` file in the `apps/web` directory to use the shared PostCSS configuration.
+
+    ```javascript
+    import { postcssConfig } from '@repo/tailwind-config/postcss';
+
+    export default postcssConfig;
+    ```
+
+---
+
+## Completion
+
+Done! Your Turborepo project is now configured to use a shared Tailwind CSS v4.1 setup. You can run your development server to see the changes.
