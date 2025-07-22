@@ -1,7 +1,7 @@
 # Turborepo-tailwin-4.1-QuickStart
 Get Started Faster and Save the God daam 25 hrs of labour..
 
-#### Using NPM !!! 
+#### Using **NPM **
 
 
 
@@ -23,7 +23,7 @@ Get Started Faster and Save the God daam 25 hrs of labour..
   <img width="293" height="108" alt="image" src="https://github.com/user-attachments/assets/066238c4-c8c0-478c-a7b7-27ec6c752ebe" />
 
   >package.json
-  `{
+ `{
   "name": "@repo/tailwind-config",
   "version": "0.0.0",
   "type": "module",
@@ -37,7 +37,7 @@ Get Started Faster and Save the God daam 25 hrs of labour..
     "tailwindcss": "^4.1.5"
   }
   }`
-  >shared-styles.css
+    >shared-styles.css
   `@import 'tailwindcss';
  
   @theme {
@@ -46,7 +46,7 @@ Get Started Faster and Save the God daam 25 hrs of labour..
   --red-1000: #e92a67;
   }`
 
-  >postcss.config.js
+    >postcss.config.js
   `export const postcssConfig = {
   plugins: {
     '@tailwindcss/postcss': {},
@@ -55,7 +55,7 @@ Get Started Faster and Save the God daam 25 hrs of labour..
 
 - Add turbo.json in ui
 
->turbo.json
+  >turbo.json
 `{
   "extends": ["//"],
   "tasks": {
@@ -81,7 +81,7 @@ Get Started Faster and Save the God daam 25 hrs of labour..
     }
   }
 }`
->package.json (can replace the whole thing just edit the name )
+  >package.json (can replace the whole thing just edit the name )
 `{
   "name": "my-turborepo",
   "private": true,
@@ -116,16 +116,19 @@ Get Started Faster and Save the God daam 25 hrs of labour..
 
 
 - Run this in root folder (only here we changed the things rest all is similar to original docs.)
-  > terminal
+    > terminal
+  
   `npm install @repo/ui @repo/tailwind-config`
 
 - Add ./apps/web/app/globals.css (same goes for the docs )
   > globals.css
+  
 `@import 'tailwindcss';
 @import '@repo/tailwind-config';
 @import '@repo/ui/styles.css';`
 -  Add postcss.config.js in web
   >postcss.config.js
+
 `import { postcssConfig } from '@repo/tailwind-config/postcss';
  
 export default postcssConfig;`
