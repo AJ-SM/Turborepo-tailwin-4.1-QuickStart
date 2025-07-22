@@ -1,10 +1,11 @@
-# Turborepo & Tailwind CSS v4.1 Quick Start
+# Turborepo & Tailwind CSS v4.1 Quick Start With **NPM**
 
 A guide to quickly set up a Turborepo project with a shared Tailwind CSS v4.1 configuration.
 
 This guide uses **NPM**. The key difference from the official Turborepo documentation is the simplification of the Tailwind CSS installation by omitting certain workspace-specific commands.
 
 **Reference:** [Turborepo Docs: Installing Tailwind CSS](https://turborepo.com/docs/guides/tools/tailwind)
+
 
 ---
 
@@ -167,7 +168,7 @@ Prepare the shared `ui` package and install dependencies.
 2.  Run the install command from the root directory to link all workspace packages.
 
     ```bash
-    npm install
+    npm install @repo/ui @repo/tailwind-config
     ```
 
 ---
