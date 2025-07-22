@@ -165,7 +165,7 @@ Prepare the shared `ui` package and install dependencies.
 
     <img width="284" height="229" alt="UI package structure with new styles.css file" src="https://github.com/user-attachments/assets/1ffad552-01de-47b2-a899-8bc6decc8af4" />
 
-2.  Run the install command from the root directory to link all workspace packages.
+2.  Run the install command from the root directory to link all workspace packages (the only differenc in official docs and this guid).
 
     ```bash
     npm install @repo/ui @repo/tailwind-config
